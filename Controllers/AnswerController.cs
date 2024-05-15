@@ -1,5 +1,6 @@
 ﻿using CapitalTest.IServices;
 using CapitalTest.Models;
+using CapitalTest.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,8 +14,8 @@ namespace CapitalTest.Controllers
         private readonly ILogger<AnswerController> _logger;
         public AnswerController(IAnswerService answerService, ILogger<AnswerController> logger)
         {
-            this._answerService = answerService;
-            this._logger = logger;
+            this._answerService = answerService ?? throw new ArgumentNullException(nameof(answerService));
+            this._logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         // GET: api/Answer/:id
