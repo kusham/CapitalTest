@@ -7,11 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Data\" />
+    <Folder Include="IServices\" />
+    <Folder Include="IRepository\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="Repository\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>
