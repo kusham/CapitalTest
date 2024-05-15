@@ -30,6 +30,7 @@ namespace CapitalTest.DTOs
         [Required(ErrorMessage = "Program description is required")]
         [StringLength(500, ErrorMessage = "Program description must not exceed 500 characters")]
         public required string ProgramDescription { get; init; }
+        public ICollection<Questions> Questions { get; set; } = [];
     }
 
 }

@@ -2,7 +2,6 @@
 using CapitalTest.IServices;
 using CapitalTest.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace CapitalTest.Controllers
 {
@@ -17,6 +16,7 @@ namespace CapitalTest.Controllers
             this._questionService = questionService ?? throw new ArgumentNullException(nameof(questionService));
             this._logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
+
         // Post : api/Question/add
         [HttpPost("add")]
         public async Task<IActionResult> AddQuestion([FromBody] CreateQuestionDto question)

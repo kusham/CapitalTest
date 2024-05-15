@@ -35,7 +35,7 @@ namespace CapitalTest.Repositories
         {
             using FeedIterator<Questions> query = _questionContainer.GetItemLinqQueryable<Questions>()
                 .Where(q => q.QuestionType == type)
-                .ToFeedIterator<Questions>();
+                .ToFeedIterator();
 
             var questions = new List<Questions>();
             while (query.HasMoreResults)
