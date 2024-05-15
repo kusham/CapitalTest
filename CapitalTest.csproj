@@ -16,7 +16,6 @@
     <Folder Include="Data\" />
     <Folder Include="IServices\" />
     <Folder Include="IRepository\" />
-    <Folder Include="DTOs\" />
     <Folder Include="Repository\" />
     <Folder Include="Services\" />
   </ItemGroup>
