@@ -1,4 +1,5 @@
 ﻿using CapitalTest.Models;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace CapitalTest.DTOs
@@ -20,6 +21,7 @@ namespace CapitalTest.DTOs
         [StringLength(150, ErrorMessage = "Question Title must not exceed 150 characters")]
         public required string QuestionTitle { get; init; }
         [Required]
+        [DefaultValue(true)]
         public bool Visibility { get; init; }
         [Required]
         public Guid ProgramId { get; init; }

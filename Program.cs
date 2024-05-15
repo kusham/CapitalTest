@@ -1,6 +1,16 @@
+using CapitalTest.Data;
+using CapitalTest.IRepositories;
+using CapitalTest.IServices;
+using CapitalTest.Repositories;
+using CapitalTest.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddSingleton<CosmosDbService>();
+
+builder.Services.AddScoped<IQuestionsRepository, QuestionsRepository>();
+builder.Services.AddScoped<IQuestionService, QuestionService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
