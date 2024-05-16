@@ -30,6 +30,15 @@ builder.Services.AddLogging(loggingBuilder =>
     loggingBuilder.AddConsole();
 });
 
+
+builder.Services.AddScoped<IPasswordHasher<Users>, PasswordHasher<Users>>();
+builder.Services.AddSingleton<JWT>(new JWT(builder.Configuration));
+
+builder.Services.AddLogging(loggingBuilder =>
+{
+    loggingBuilder.AddConsole();
+});
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
