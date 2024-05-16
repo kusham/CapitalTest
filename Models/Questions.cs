@@ -8,13 +8,10 @@ namespace CapitalTest.Models
     {
         [JsonProperty("id")]
         public required Guid Id { get; set; }
-        [Required(ErrorMessage = "Question type is required")]
         public required QuestionType QuestionType { get; set; }
-        [Required(ErrorMessage = "Question Title is required")]
         public required string QuestionTitle { get; set; }
         [DefaultValue(true)]
         public bool Visibility { get; set; }
-        [Required]
         public Guid ProgramId { get; set; }
     }
 

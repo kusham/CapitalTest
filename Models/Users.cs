@@ -1,11 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace CapitalTest.Models
 {
     public class Users
     {
-        public required Guid Id { get; set; }
+        [JsonProperty("id")]
+        public Guid Id { get; set; }
         [Required(ErrorMessage = "Fisrt name is required")]
         public required string FirstName { get; set; }
 
