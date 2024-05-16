@@ -1,6 +1,7 @@
 ﻿using CapitalTest.DTOs;
 using CapitalTest.IServices;
 using CapitalTest.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -20,6 +21,7 @@ namespace CapitalTest.Controllers
 
         // GET: api/Program/:id
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<IActionResult> GetProgramById(Guid id)
         {
             try
@@ -40,6 +42,7 @@ namespace CapitalTest.Controllers
 
         // Post : api/Program/add
         [HttpPost("add")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AddProgram([FromBody] CreateProgramDto program)
         {
             try
@@ -61,6 +64,7 @@ namespace CapitalTest.Controllers
 
         // PUT: api/Program/:id
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateProgram(UpdateProgramDto program, Guid id)
         {
             try
@@ -86,6 +90,7 @@ namespace CapitalTest.Controllers
 
         // DELETE: api/Program/:id
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteProgram(Guid id)
         {
             try

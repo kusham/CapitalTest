@@ -1,6 +1,7 @@
 ﻿using CapitalTest.IServices;
 using CapitalTest.Models;
 using CapitalTest.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,6 +21,7 @@ namespace CapitalTest.Controllers
 
         // GET: api/Answer/:id
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<IActionResult> GetAnswerById(Guid id)
         {
             try
@@ -40,6 +42,7 @@ namespace CapitalTest.Controllers
 
         // GET: api/Answer/user/:id
         [HttpGet("user/{id}")]
+        [Authorize]
         public async Task<IActionResult> GetAnswerByUser(Guid id)
         {
             try
@@ -60,6 +63,7 @@ namespace CapitalTest.Controllers
 
         // POST: api/Answer
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> SubmitAnswer(Answers answer)
         {
             try

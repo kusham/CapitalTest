@@ -20,7 +20,7 @@ namespace CapitalTest.Controllers
             this._logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        // POST: api/Auth/signin
+        // POST: api/Auth/signup
         [HttpPost("signup")]
         public async Task<IActionResult> SignUp([FromBody] Users user)
         {

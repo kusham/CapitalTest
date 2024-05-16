@@ -1,6 +1,7 @@
 ﻿using CapitalTest.DTOs;
 using CapitalTest.IServices;
 using CapitalTest.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CapitalTest.Controllers
@@ -19,6 +20,7 @@ namespace CapitalTest.Controllers
 
         // Post : api/Question/add
         [HttpPost("add")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AddQuestion([FromBody] CreateQuestionDto question)
         {
             try
@@ -40,6 +42,7 @@ namespace CapitalTest.Controllers
 
         // DELETE: api/Question/:id
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteQuestion(Guid id)
         {
             try
@@ -60,6 +63,7 @@ namespace CapitalTest.Controllers
 
         // GET: api/Question/getbytype/:type
         [HttpGet("getbytype/{type}")]
+        [Authorize]
         public async Task<IActionResult> GetQuestionsByType(QuestionType type)
         {
             try
@@ -76,6 +80,7 @@ namespace CapitalTest.Controllers
 
         // GET: api/Question/:id
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<IActionResult> GetQuestionById(Guid id)
         {
             try
@@ -96,6 +101,7 @@ namespace CapitalTest.Controllers
 
         // PUT: api/Question/:id
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateQuestion(UpdateQuestionDto question, Guid id)
         {
             try

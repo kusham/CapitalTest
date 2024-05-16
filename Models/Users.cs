@@ -7,7 +7,7 @@ namespace CapitalTest.Models
     public class Users
     {
         [JsonProperty("id")]
-        public required Guid Id { get; set; }
+        public Guid Id { get; set; }
         [Required(ErrorMessage = "Fisrt name is required")]
         public required string FirstName { get; set; }
 
